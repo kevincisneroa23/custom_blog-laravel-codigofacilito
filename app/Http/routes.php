@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// RUTAS DEL FRONTEND
+
+Route::get('/', [
+	'as' => 'front.index',
+	'uses' => 'FrontController@index'
+]);
+
+// RUTAS DEL PANEL ADMIN

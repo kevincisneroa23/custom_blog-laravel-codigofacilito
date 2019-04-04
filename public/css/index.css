@@ -1,3 +1,133 @@
+/*
+COLORES
+#262626; NEGRO PALETA 1
+#4267B2; AZUL PALETA 2
+#FFF;    BLANCO PALETA 3
+#F5F5F5; GRIS CLARO = HOVER 
+
+*/
+
 body{
 	background-color:#d2d2d2 ;
 }
+
+*{
+	box-sizing: border-box;
+}
+
+div#main_container{
+	padding   : 0px;
+	background: #262626;
+	min-height: 600px;
+}
+
+div#main_content{
+	background : white;
+	min-height : 500px;
+	padding-top: 10px;
+}
+
+footer#main_footer{
+	background: #4267B2;
+	color     : #fff;
+	text-align: center;
+	height    : 30px;
+	margin-top: 10px;
+	padding   : 5px;
+}
+
+header#main_header{
+	margin-bottom: 10px;
+}
+
+header#main_header #main_nav{
+	border       : 0;
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+
+/*===== MENU =====*/
+#main_nav *{
+	color: #4267B2 ;
+	font-weight: bold;
+}
+
+#main_nav .row > div{
+	background   : #fff;
+	border-right : 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	padding      : 0;
+}
+
+#logo_nav > a{
+	height : 65px;
+	width  : 100%;
+	display: block;
+}
+
+#logo_nav img{
+	height      : 55px;
+	width       : 100%;
+	margin-top  : 5px;
+	margin-right: 10px;
+}
+
+
+#search_nav_input{
+	height       : 65px;
+	border       : 0;
+	border-radius: 0;
+	padding      : 5px 10px;
+	width        : 100%;
+	color        : #000;
+	font-weight: normal;
+}
+
+#search_nav_btn{
+	height       : 65px;
+	border       : 0;
+	border-radius: 0;
+	background   : white;
+	color        : gray;
+}
+
+#search_nav_input:focus { 
+	outline:0px; /*Remove default style inputs*/
+}
+
+#content_nav ul a{
+	height : 65px;
+	padding: 20px 5px; 
+}
+
+#content_nav ul a:hover{
+	background   : #F5F5F5;
+	border-bottom: 5px solid #4267B2;
+}
+#content_nav ul a:active{
+	background   : #4267B2;
+	color        : #fff !important;
+	border-bottom: 5px solid #fff !important;
+}
+#content_nav i.fa:active{
+	color        : #fff !important;
+}
+
+#content_nav_user{
+	width: 160px;
+	float: right;
+}
+
+#content_nav_user > li{
+	width: 100%;
+}
+
+#content_nav_user span.caret{
+	float: right;
+	margin-top: 10px;
+}
+
+#content_nav_user ul.dropdown-menu{
+	padding: 0;
+}
+/*===== /MENU =====*/
