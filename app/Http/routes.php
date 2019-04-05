@@ -19,3 +19,8 @@ Route::get('/', [
 ]);
 
 // RUTAS DEL PANEL ADMIN
+
+Route::get('/admin', [
+	'as' => 'admin.index',
+	'uses' => 'AdminController@index'
+]);

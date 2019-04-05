@@ -4,6 +4,7 @@ COLORES
 #4267B2; AZUL PALETA 2
 #FFF;    BLANCO PALETA 3
 #F5F5F5; GRIS CLARO = HOVER 
+#e7e7e7; GRIN CLARO = CONTORNO
 
 */
 
@@ -24,7 +25,7 @@ div#main_container{
 div#main_content{
 	background : white;
 	min-height : 500px;
-	padding-top: 10px;
+	padding: 15px 0px
 }
 
 footer#main_footer{
@@ -47,54 +48,44 @@ header#main_header #main_nav{
 }
 
 /*===== MENU =====*/
-#main_nav *{
-	color: #4267B2 ;
-	font-weight: bold;
-}
 
-#main_nav .row > div{
-	background   : #fff;
-	border-right : 1px solid #e7e7e7;
-	border-bottom: 1px solid #e7e7e7;
-	padding      : 0;
-}
+/*=====LOGO =====*/
+	#logo_nav > a{
+		height : 65px;
+		width  : 100%;
+		display: block;
+	}
 
-#logo_nav > a{
-	height : 65px;
-	width  : 100%;
-	display: block;
-}
+	#logo_nav img{
+		height      : 55px;
+		width       : 100%;
+		margin-top  : 5px;
+		margin-right: 10px;
+	}
 
-#logo_nav img{
-	height      : 55px;
-	width       : 100%;
-	margin-top  : 5px;
-	margin-right: 10px;
-}
+/*=====BUSCADOR =====*/
+	#search_nav_input{
+		height       : 65px;
+		border       : 0;
+		border-radius: 0;
+		padding      : 5px 10px;
+		width        : 100%;
+		color        : #000;
+		font-weight: normal;
+	}
 
-
-#search_nav_input{
-	height       : 65px;
-	border       : 0;
-	border-radius: 0;
-	padding      : 5px 10px;
-	width        : 100%;
-	color        : #000;
-	font-weight: normal;
-}
-
-#search_nav_btn{
-	height       : 65px;
-	border       : 0;
-	border-radius: 0;
-	background   : white;
-	color        : gray;
-}
+	#search_nav_btn{
+		height       : 65px;
+		border       : 0;
+		border-radius: 0;
+		background   : white;
+		color        : gray;
+	}
 
 #search_nav_input:focus { 
 	outline:0px; /*Remove default style inputs*/
 }
-
+/*=====CONTENIDO=====*/
 #content_nav ul a{
 	height : 65px;
 	padding: 20px 5px; 
@@ -102,15 +93,18 @@ header#main_header #main_nav{
 
 #content_nav ul a:hover{
 	background   : #F5F5F5;
-	border-bottom: 5px solid #4267B2;
+	border-bottom: 5px solid #262626;
 }
+
 #content_nav ul a:active{
 	background   : #4267B2;
 	color        : #fff !important;
 	border-bottom: 5px solid #fff !important;
 }
-#content_nav i.fa:active{
+
+#content_nav ul a:active i{
 	color        : #fff !important;
+	
 }
 
 #content_nav_user{
@@ -131,3 +125,71 @@ header#main_header #main_nav{
 	padding: 0;
 }
 /*===== /MENU =====*/
+
+
+/*FUENTES*/
+#main_nav a{
+	color: #4267B2 ;
+	font-weight: bold;
+}
+
+#main_nav i{
+	color: #262626 ;
+}
+
+
+
+
+/*Contorno*/
+#main_nav .row > div{
+	background   : #fff;
+	border-right : 1px solid #e7e7e7;
+	/*border-bottom: 1px solid #e7e7e7;*/
+	padding      : 0;
+}
+
+
+
+
+#admin_nav *{
+	color: white ;
+}
+
+#admin_nav{
+	padding: 0;
+	margin: 0; 
+	border: 0;
+	border-radius: 0;
+	min-height: 30px !important;
+}
+
+
+
+#article_container{
+	height: 100%;
+}
+
+#aside_container{
+	border-left: 1px solid #4267B2;
+
+}
+
+.label-custom{
+	display: block !important;
+    padding: 5px !important;
+    margin-bottom: 5px;
+    font-size: 16px !important;
+    text-align: left !important;
+    padding-left: 10px !important;
+}
+
+.panel-custom{
+	box-shadow: none !important;
+}
+
+.panel-custom .panel-title{
+	border-bottom: 3px solid #d2d2d2;
+	padding-bottom: 5px;
+	font-weight: bold;
+	font-size: 18px;
+}
