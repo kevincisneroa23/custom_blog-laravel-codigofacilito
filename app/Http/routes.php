@@ -18,6 +18,11 @@ Route::get('/', [
 	'uses' => 'FrontController@index'
 ]);
 
+Route::get('article/{title}', [
+	'as' => 'front.show.article',
+	'uses' => 'FrontController@show'
+]);
+
 // RUTAS DEL PANEL ADMIN
 
 Route::get('/admin', [

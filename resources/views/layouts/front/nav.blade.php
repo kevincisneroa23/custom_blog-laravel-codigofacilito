@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" id="main_nav">
+<nav class="navbar navbar-default navbar-fixed-top" id="main_nav">
   <div class="container-fluid"> 
   <div class="row">
     <!-- LOGO -->
@@ -25,18 +25,18 @@
     <div class="col-md-7" id="content_nav">
       <!--OPCIONES-->
       <ul class="nav navbar-nav">
-        <li><a href="#"><i class="fa fa-calendar-times-o"></i> Recientes</a></li>
-        <li><a href="#"><i class="fa fa-star"></i> Mas Vistos</a></li>
-        <li><a href="#"><i class="fa fa-users"></i> Autores</a></li>
+        <li><a href="{{ route('front.index') }}"><i class="fa fa-home"></i> Inicio</a></li>
+        <li><a href="#recientes"><i class="fa fa-calendar-times-o"></i> Recientes</a></li>
+        <li><a href="#like"><i class="fa fa-star"></i> Mas Gustados</a></li>
       </ul>
       <!--USUARIO-->
       <ul  class="nav navbar-nav" id="content_nav_user">
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list"></i> Menu<span class="caret"></span></a>  
           <ul class="dropdown-menu">
-            <li><a href="#"><i class="fa fa-sign-in"></i> Entrar</a></li>
-            <li><a href="#"><i class="fa fa-user"></i> Registrate</a></li>
+            <li><a href="{{ route('admin.index') }}"><i class="fa fa-sign-in"></i> Entrar</a></li>
             <li><a href="#"><i class="fa fa-power-off"></i> Salir</a></li>
+            <li><a href="#"><i class="fa fa-user"></i> Registrate</a></li>
           </ul>
         </li>
       </ul>
