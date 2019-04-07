@@ -25,7 +25,15 @@ Route::get('article/{title}', [
 
 // RUTAS DEL PANEL ADMIN
 
-Route::get('/admin', [
-	'as' => 'admin.index',
-	'uses' => 'AdminController@index'
-]);
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::get('/', [
+		'as' => 'admin.index',
+		function(){ return view('admin.index'); }
+	]);
+
+	Route::resource('users','UsersController');
+
+});
+
+

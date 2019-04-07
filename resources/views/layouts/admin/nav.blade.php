@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" id="main_nav">
+<nav class="navbar navbar-default  navbar-fixed-top" id="main_nav">
 <div class="container-fluid"> 
 <div class="row">
 
@@ -13,7 +13,7 @@
     <div class="col-md-10" id="content_nav">
       <!--OPCIONES-->
       <ul class="nav navbar-nav">
-        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-home"></i> Inicio</a></li>
         <li><a href="#"><i class="fa fa-user"></i> Usuarios</a></li>
         <li><a href="#"><i class="fa fa-list"></i> Categorias</a></li>
         <li><a href="#"><i class="fa fa-tag"></i> Tags</a></li>

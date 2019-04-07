@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Blog | @yield('title','Blog')</title>
 	<link rel="stylesheet" href="{{ asset('css/index.css') }}">
-	<link rel="stylesheet" href="{{ asset('fonts/font-awesome/css/font-awesome.css') }}">
+	<link rel="stylesheet" href="{{ asset('fonts/fontawesome-free-5.8.1-web/css/all.css') }}">
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ asset('plugins/chosen/css/chosen.css') }}">
 	<link rel="stylesheet" href="{{ asset('plugins/trumbowyg/ui/trumbowyg.css') }}">
@@ -30,6 +30,7 @@
 	<script type="text/javascript" src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('plugins/chosen/js/chosen.jquery.js')}}" ></script>
 	<script type="text/javascript" src="{{ asset('plugins/trumbowyg/trumbowyg.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('plugins/bootstrap-filestyle/bootstrap-filestyle.js') }}"></script>
 	@yield('js')
 
 </div><!--/#main_container-->

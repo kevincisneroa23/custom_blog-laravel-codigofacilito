@@ -319,3 +319,10 @@ border-bottom: 1px solid #e7e7e7 !important;
 	height: 100px;
 }
 
+
+/* ===== TABLAS ==== */
+.custom-table thead tr th{
+	 border-bottom: 3px solid rgba(66, 103, 178, .6) !important;
+}  
+
+
