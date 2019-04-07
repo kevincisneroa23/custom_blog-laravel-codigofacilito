@@ -11,7 +11,7 @@
   <li><a href="#">Usuarios</a></li>
   <li class="active">Crear</li>
 </ol>
-<h4 class="text-center custom-title" id="recientes">Registro</h4>	
+<h4 class="text-center custom-title" id="recientes">REGISTRAR USUARIO</h4>	
 
 
 {!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}
@@ -57,12 +57,16 @@
 	<div class="form-group text-center">
 		<button type="submit" class="btn btn-primary">
 			<i class="fas fa-save"></i>
-			Registrar
+			Guardar
 		</button>
 		<button type="reset" class="btn btn-default">
 			<i class="fas fa-eraser"></i>
-			Listar
+			Limpiar
 		</button>
+		<a href="{{ route('admin.users.index') }}" class="btn btn-info">
+			<i class="fas fa-reply"></i>
+			Atras
+		</a>
 	</div>
 
 {!! Form::close() !!}

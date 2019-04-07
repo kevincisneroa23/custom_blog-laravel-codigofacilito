@@ -11,7 +11,7 @@
   <li><a href="#">Usuarios</a></li>
   <li class="active">Editar</li>
 </ol>
-<h4 class="text-center custom-title" id="recientes">Actualizar</h4>	
+<h4 class="text-center custom-title" id="recientes">ACTUALIZAR USUARIO</h4>	
 
 
 {!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}
@@ -57,8 +57,12 @@
 	<div class="form-group text-center">
 		<button type="submit" class="btn btn-primary">
 			<i class="fas fa-save"></i>
-			Actualizar
+			Guardar
 		</button>
+		<a href="{{ route('admin.users.index') }}" class="btn btn-info">
+			<i class="fas fa-reply"></i>
+			Atras
+		</a>
 	</div>
 
 {!! Form::close() !!}
