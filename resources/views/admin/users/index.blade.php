@@ -6,11 +6,11 @@
 <div class="col-md-12">
 
 <ol class="breadcrumb">
-  <li><a href="#">Admin</a></li>
-  <li><a href="#">Usuarios</a></li>
+  <li><a href="{{ route('admin.index') }}">Admin</a></li>
+  <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
   <li class="active">Listar</li>
 </ol>
-<h4 class="text-center custom-title" id="recientes">LISTADO DE USUARIOS</h4>	
+<h4 class="text-center text-uppercase custom-title" id="recientes">listado de usuarios</h4>	
 
 <div class="form-group">
 	<a href="{{ route('admin.users.create') }}" class="btn btn-primary">

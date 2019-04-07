@@ -7,11 +7,11 @@
 
 
 <ol class="breadcrumb">
-  <li><a href="#">Admin</a></li>
-  <li><a href="#">Usuarios</a></li>
+  <li><a href="{{ route('admin.index') }}">Admin</a></li>
+  <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
   <li class="active">Crear</li>
 </ol>
-<h4 class="text-center custom-title" id="recientes">REGISTRAR USUARIO</h4>	
+<h4 class="text-center  text-uppercase custom-title" id="recientes">registrar usuario</h4>	
 
 
 {!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}

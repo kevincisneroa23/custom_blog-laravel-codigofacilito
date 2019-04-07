@@ -32,9 +32,11 @@ Route::group(['prefix' => 'admin'], function(){
 		function(){ return view('admin.index'); }
 	]);
 
-	Route::resource('users','UsersController');
+	Route::resource('users', 'UsersController');
 
-	Route::resource('categories','CategoriesController');
+	Route::resource('categories', 'CategoriesController');
+
+	Route::resource('tags', 'TagsController');
 
 });
 

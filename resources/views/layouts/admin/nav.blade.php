@@ -16,7 +16,7 @@
         <li><a href="{{ route('admin.index') }}"><i class="fa fa-home"></i> Inicio</a></li>
         <li><a href="{{ route('admin.users.index') }}"><i class="fa fa-user"></i> Usuarios</a></li>
         <li><a href="{{ route('admin.categories.index') }}"><i class="fa fa-list"></i> Categorias</a></li>
-        <li><a href="#"><i class="fa fa-tag"></i> Tags</a></li>
+        <li><a href="{{ route('admin.tags.index') }}"><i class="fa fa-tag"></i> Etiquetas</a></li>
         <li><a href="#"><i class="fa fa-files-o"></i> Articulos</a></li>
         <li><a href="#"><i class="fa fa-photo"></i> Imagenes</a></li>
       </ul>

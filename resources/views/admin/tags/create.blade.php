@@ -6,12 +6,12 @@
 <div class="col-md-6 col-md-offset-3">
 <ol class="breadcrumb">
   <li><a href="{{ route('admin.index') }}">Admin</a></li>
-  <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
+  <li><a href="{{ route('admin.tags.index') }}">Etiquetas</a></li>
   <li class="active">Crear</li>
 </ol>
-<h4 class="text-center text-uppercase custom-title" id="recientes">registro de categorias</h4>	
+<h4 class="text-center text-uppercase custom-title" id="recientes">Registro de Etiquetas</h4>	
 
-{!! Form::open(['route' => 'admin.categories.store', 'method' => 'POST']) !!}
+{!! Form::open(['route' => 'admin.tags.store', 'method' => 'POST']) !!}
 
 	<div class="form-group">
 		{!! Form::label('name', 'Nombre') !!}
@@ -31,7 +31,7 @@
 			<i class="fas fa-eraser"></i>
 			Limpiar
 		</button>
-		<a href="{{ route('admin.categories.index') }}" class="btn btn-info">
+		<a href="{{ route('admin.tags.index') }}" class="btn btn-info">
 			<i class="fas fa-reply"></i>
 			Atras
 		</a>

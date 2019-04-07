@@ -7,15 +7,15 @@
 
 <ol class="breadcrumb">
   <li><a href="{{ route('admin.index') }}">Admin</a></li>
-  <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
+  <li><a href="{{ route('admin.tags.index') }}">Etiquetas</a></li>
   <li class="active">Listar</li>
 </ol>
-<h4 class="text-center text-uppercase custom-title" id="recientes">listado de categorias</h4>	
+<h4 class="text-center text-uppercase custom-title" id="recientes">listado de Etiquetas</h4>	
 
 <div class="form-group">
-	<a href="{{ route('admin.categories.create') }}" class="btn btn-primary">
+	<a href="{{ route('admin.tags.create') }}" class="btn btn-primary">
 		<i class="fa fa-user-plus"></i>
-		Crear nueva categoria
+		Crear nueva tags
 	</a>
 </div>
 
@@ -33,11 +33,11 @@
 			<td> ID</td>
 			<td> Nombre</td>
 			<td>
-				<a href="{{ route('admin.categories.edit', 'id' ) }}" class="btn btn-warning">  
+				<a href="{{ route('admin.tags.edit', 'id' ) }}" class="btn btn-warning">  
 					<i class="fas fa-edit"></i> 
 				</a>
 
-				<a href="{{ route('admin.categories.destroy', 'id') }}" class="btn btn-danger" onclick="return confirm('Esta segura de eliminarlo')"> 
+				<a href="{{ route('admin.tags.destroy', 'id') }}" class="btn btn-danger" onclick="return confirm('Esta segura de eliminarlo')"> 
 					<i class="fas fa-trash-alt"></i>
 				</a>
 			</td>
