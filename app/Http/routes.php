@@ -38,6 +38,8 @@ Route::group(['prefix' => 'admin'], function(){
 
 	Route::resource('tags', 'TagsController');
 
+	Route::resource('articles', 'ArticlesController');
+
 });
 
 

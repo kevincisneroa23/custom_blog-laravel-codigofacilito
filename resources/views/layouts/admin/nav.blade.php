@@ -17,16 +17,16 @@
         <li><a href="{{ route('admin.users.index') }}"><i class="fa fa-user"></i> Usuarios</a></li>
         <li><a href="{{ route('admin.categories.index') }}"><i class="fa fa-list"></i> Categorias</a></li>
         <li><a href="{{ route('admin.tags.index') }}"><i class="fa fa-tag"></i> Etiquetas</a></li>
-        <li><a href="#"><i class="fa fa-files-o"></i> Articulos</a></li>
-        <li><a href="#"><i class="fa fa-photo"></i> Imagenes</a></li>
+        <li><a href="{{ route('admin.articles.index') }}"><i class="fa fa-newspaper"></i> Articulos</a></li>
+        <li><a href="#"><i class="fa fa-images"></i> Imagenes</a></li>
       </ul>
       <!--USUARIO-->
       <ul  class="nav navbar-nav" id="content_nav_user">
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Kevin Cisnero <span class="caret"></span></a>  
           <ul class="dropdown-menu">
-            <li><a href="#"><i class="fa fa-pencil"></i> Editar</a></li>
-            <li><a href="#"><i class="fa fa-power-off"></i> Salir</a></li>
+            <li><a href="#"><i class="fa fa-cog"></i> Preferencias</a></li>
+            <li><a href="#"><i class="fa fa-sign-out-alt"></i> Salir</a></li>
           </ul>
         </li>
       </ul>

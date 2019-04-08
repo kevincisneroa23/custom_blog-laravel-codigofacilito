@@ -3,19 +3,16 @@
 @section('content')
 <div class="container-fluid">
 <div class="row">
+
 <div class="col-md-6 col-md-offset-3">
+	<ol class="breadcrumb">
+	  <li><a href="{{ route('admin.index') }}">Admin</a></li>
+	  <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
+	  <li class="active">Editar</li>
+	</ol>
+	<h4 class="text-center text-uppercase custom-title" id="recientes">actualizar usuario USUARIO</h4>	
 
-
-<ol class="breadcrumb">
-  <li><a href="{{ route('admin.index') }}">Admin</a></li>
-  <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
-  <li class="active">Editar</li>
-</ol>
-<h4 class="text-center text-uppercase custom-title" id="recientes">actualizar usuario USUARIO</h4>	
-
-
-{!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}
-
+	{!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}
 	<div class="form-group">
 		{!! Form::label('name','Nombre') !!}
 		<div class="input-group">
@@ -64,10 +61,9 @@
 			Atras
 		</a>
 	</div>
-
-{!! Form::close() !!}
-
+	{!! Form::close() !!}
 </div><!--/.col-->
+
 </div><!--/.row-->
 </div><!--/.container-->
 @endsection
