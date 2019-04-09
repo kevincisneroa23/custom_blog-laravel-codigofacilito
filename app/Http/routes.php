@@ -40,6 +40,12 @@ Route::group(['prefix' => 'admin'], function(){
 
 	Route::resource('articles', 'ArticlesController');
 
-});
 
+	// RUTAS DE AUTENTIFICACION
+	Route::get('/auth/login', [
+		'as' => 'admin.auth.login',
+		function(){ return view('admin.auth.login'); }
+	]);
+
+});
 

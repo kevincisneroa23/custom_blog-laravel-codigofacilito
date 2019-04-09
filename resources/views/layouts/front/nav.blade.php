@@ -34,9 +34,9 @@
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list"></i> Menu<span class="caret"></span></a>  
           <ul class="dropdown-menu">
-            <li><a href="{{ route('admin.index') }}"><i class="fa fa-sign-in"></i> Entrar</a></li>
-            <li><a href="#"><i class="fa fa-power-off"></i> Salir</a></li>
-            <li><a href="#"><i class="fa fa-user"></i> Registrate</a></li>
+            <li><a href="{{ route('admin.index') }}"><i class="fa fa-sign-in-alt"></i> Entrar</a></li>
+            <li><a href="#"><i class="fa fa-sign-out-alt"></i> Salir</a></li>
+            <li><a href="#"><i class="fa fa-user-plus"></i> Registrate</a></li>
           </ul>
         </li>
       </ul>
