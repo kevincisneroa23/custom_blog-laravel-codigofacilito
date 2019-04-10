@@ -30,25 +30,33 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php for ($i=0; $i < 5 ; $i++) {  ?>
+		@foreach($users as $user)
 			<tr>
-			<td> ID</td>
-			<td> Nombre</td>
-			<td> Correo</td>
-			<td> Tipo </td>
+			<td> {{ $user->id }} </td>
+			<td> {{ $user->name }} </td>
+			<td> {{ $user->email }} </td>
 			<td>
-				<a href="{{ route('admin.users.edit', 'id' ) }}" class="btn btn-warning">  
+				@if($user->type == 'admin' ) 
+					<div class="label label-primary ">{{ $user->type }}</div>
+				@else
+					<div class="label label-warning ">{{ $user->type }}</div>
+				@endif()
+			</td>
+			<td>
+				<a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning">  
 					<i class="fas fa-edit"></i> 
 				</a>
-
-				<a href="{{ route('admin.users.destroy', 'id') }}" class="btn btn-danger" onclick="return confirm('Esta segura de eliminarlo')"> 
-					<i class="fas fa-trash-alt"></i>
-				</a>
+				{!! Form::open(['route' => ['admin.users.destroy', $user->id],'method' => 'DELETE', 'class' => 'inline-block']) !!}
+					<button type="submit" class="btn btn-danger" onclick="return confirm('Esta segura de eliminarlo')"> 
+						<i class="fas fa-trash-alt"></i>
+					</button>
+				{!! Form::close() !!}
 			</td>
 			</tr>
-		<?php } ?>
+		@endforeach()
 	</tbody>
 	</table>
+	{{ $users->render() }}
 </div><!--/.col-->
 
 </div><!--/.row-->

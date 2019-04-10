@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -15,8 +16,9 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.users.index');
+    {   
+        $users = User::orderBy('id','ASC')->paginate(5);
+        return view('admin.users.index')->with('users', $users);
     }
 
     /**
@@ -26,6 +28,7 @@ class UsersController extends Controller
      */
     public function create()
     {
+
         return view('admin.users.create');
     }
 
@@ -36,8 +39,24 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $user = new User($request->all());
+
+         //Manipulacion de Imagenes...
+        if($request->img_perfil)
+        {
+            $file = $request->file('img_perfil');
+            $name = 'blog_avatar_'. time() . '.' . $file->getClientOriginalExtension();
+            $path = public_path() . '\images\perfiles\\';
+            $file->move($path, $name);
+            //SET
+            $user->img_perfil = $name;
+        }
+
+        $user->password = bcrypt($request->password);
+        $user->save();
+        flash("Registro exitoso | Usuario: ".$user->name.".")->success();
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -59,7 +78,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {   
-        $user = $id;
+        $user = User::find($id);
         return view('admin.users.edit')->with('user', $user);
     }
 
@@ -72,7 +91,23 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+         //Manipulacion de Imagenes...
+        if($request->img_perfil)
+        {
+            $file = $request->file('img_perfil');
+            $name = 'blog_avatar_'. time() . '.' . $file->getClientOriginalExtension();
+            $path = public_path() . '\images\perfiles\\';
+            $file->move($path, $name);
+            //SET
+            $user->img_perfil = $name;
+        }
+        
+        $user->fill($request->all());
+        $user->type = $request->type; // forzar ya que fill no reemplaza type 
+        $user->save();
+        flash("Actualizacion exitosa | Usuario: ".$user->name.".")->warning();
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -83,6 +118,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        flash("Eliminacion exitosa | Usuario: ".$user->name.".")->error();
+        return redirect()->route('admin.users.index');
     }
 }

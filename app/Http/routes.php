@@ -12,7 +12,6 @@
 */
 
 // RUTAS DEL FRONTEND
-
 Route::get('/', [
 	'as' => 'front.index',
 	'uses' => 'FrontController@index'
@@ -24,7 +23,6 @@ Route::get('article/{title}', [
 ]);
 
 // RUTAS DEL PANEL ADMIN
-
 Route::group(['prefix' => 'admin'], function(){
 
 	Route::get('/', [
@@ -41,11 +39,13 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::resource('articles', 'ArticlesController');
 
 
-	// RUTAS DE AUTENTIFICACION
-	Route::get('/auth/login', [
-		'as' => 'admin.auth.login',
-		function(){ return view('admin.auth.login'); }
-	]);
-
 });
+
+
+
+// RUTAS DE AUTENTIFICACION
+Route::get('admin/auth/login', [
+	'as' => 'admin.auth.login',
+	function(){ return view('admin.auth.login'); }
+]);
 

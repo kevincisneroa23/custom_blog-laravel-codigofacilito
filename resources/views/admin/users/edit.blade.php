@@ -12,12 +12,12 @@
 	</ol>
 	<h4 class="text-center text-uppercase custom-title" id="recientes">actualizar usuario USUARIO</h4>	
 
-	{!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}
+	{!! Form::open(['route' => ['admin.users.update', $user->id],'method' => 'PUT', 'files' => true]) !!}
 	<div class="form-group">
 		{!! Form::label('name','Nombre') !!}
 		<div class="input-group">
 		<span class="input-group-addon"><i class="fas fa-user"></i></span>
-		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre Completo', 'required']) !!}
+		{!! Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Nombre Completo', 'required']) !!}
 		</div>
 	</div>
 
@@ -25,15 +25,7 @@
 		{!! Form::label('email','Correo Electronico') !!}
 		<div class="input-group">
 		<span class="input-group-addon"><i class="fas fa-envelope"></i></span>
-		{!! Form::email('email',null, ['class' => 'form-control', 'placeholder' => 'example@gmail.com', 'required']) !!}
-		</div>
-	</div>
-
-	<div class="form-group">
-		{!! Form::label('password','Contraseña') !!}
-		<div class="input-group">
-		<span class="input-group-addon"><i class="fas fa-key"></i></span>
-		{!! Form::password('password', ['class' => 'form-control', 'placeholder' => '************', 'required']) !!}
+		{!! Form::email('email', $user->email, ['class' => 'form-control', 'placeholder' => 'example@gmail.com', 'required']) !!}
 		</div>
 	</div>
 
@@ -41,13 +33,15 @@
 		{!! Form::label('type', 'Tipo') !!}
 		<div class="input-group"> 
 		<span class="input-group-addon"><i class="fas fa-user-friends"></i></span>
-		{!! Form::select('type', ['member' => 'Miembro', 'admin' => 'Administrador'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione una opcion...', 'required']) !!}
+		{!! Form::select('type', ['member' => 'Miembro', 'admin' => 'Administrador'], $user->type, ['class' => 'form-control', 'placeholder' => 'Seleccione una opcion...', 'required']) !!}
 		</div>
 	</div>
-
+	<div class="form-group  text-center">
+		<img src="{{ asset("images/perfiles/$user->img_perfil") }}" class="img-rounded" height="150px" width="150px">
+	</div>
 	<div class="form-group">
 		{!! Form::label('img_perfil', 'Imagen de Perfil') !!}
-		{!! Form::file('img_perfil', ['class' => 'filestyle', 'id' => 'img_perfil', 'data-buttonText' => 'Buscar...']) !!}
+		{!! Form::file('img_perfil', ['class' => 'filestyle', 'id' => 'img_perfil', 'data-buttonText' => 'Buscar...', 'data-placeholder' => "$user->img_perfil" ]) !!}
 	</div>
 	
 	<!-- =====BOTONES===== -->

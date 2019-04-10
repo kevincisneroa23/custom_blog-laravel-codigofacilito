@@ -12,7 +12,7 @@
 	</ol>
 	<h4 class="text-center  text-uppercase custom-title" id="recientes">registrar usuario</h4>	
 
-	{!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}
+	{!! Form::open(['route' => 'admin.users.store','method' => 'POST', 'files' => true]) !!}
 	<div class="form-group">
 		{!! Form::label('name','Nombre') !!}
 		<div class="input-group">
