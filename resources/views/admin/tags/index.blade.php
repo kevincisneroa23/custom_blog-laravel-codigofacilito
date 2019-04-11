@@ -28,23 +28,25 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php for ($i=0; $i < 5 ; $i++) {  ?>
+		@foreach($tags as $tag)
 			<tr>
-			<td> ID</td>
-			<td> Nombre</td>
+			<td> {{ $tag->id }} </td>
+			<td> {{ $tag->name }} </td>
 			<td>
-				<a href="{{ route('admin.tags.edit', 'id' ) }}" class="btn btn-warning">  
+				<a href="{{ route('admin.tags.edit', $tag->id ) }}" class="btn btn-warning">  
 					<i class="fas fa-edit"></i> 
 				</a>
-
-				<a href="{{ route('admin.tags.destroy', 'id') }}" class="btn btn-danger" onclick="return confirm('Esta segura de eliminarlo')"> 
+				{!! Form::open(['route' => ['admin.tags.destroy', $tag->id], 'method' => 'DELETE', 'class' => 'inline-block']) !!}
+				<button type="submit" class="btn btn-danger" onclick="return confirm('Esta segura de eliminarlo')"> 
 					<i class="fas fa-trash-alt"></i>
-				</a>
+				</button>
+				{!! Form::open() !!}
 			</td>
 			</tr>
-		<?php } ?>
+		@endforeach()
 	</tbody>
 	</table>
+	<center>{!! $tags->render() !!}</center>
 </div><!--/.col-->
 
 </div><!--/.row-->

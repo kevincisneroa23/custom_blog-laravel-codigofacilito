@@ -12,12 +12,12 @@
 	</ol>
 	<h4 class="text-center text-uppercase custom-title" id="recientes">Actualizar Etiqueta</h4>	
 
-	{!! Form::open(['route' => 'admin.tags.store','method' => 'POST']) !!}
+	{!! Form::open(['route' => ['admin.tags.update', $tag->id],'method' => 'PUT']) !!}
 	<div class="form-group">
 		{!! Form::label('name','Nombre') !!}
 		<div class="input-group">
 		<span class="input-group-addon"><i class="fas fa-list-ul"></i></span>
-		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nuevo nombre de etiqueta', 'required']) !!}
+		{!! Form::text('name', $tag->name, ['class' => 'form-control', 'placeholder' => 'Nuevo nombre de etiqueta', 'required']) !!}
 		</div>
 	</div>
 	

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Tag;
 
 class TagsController extends Controller
 {
@@ -16,7 +17,8 @@ class TagsController extends Controller
      */
     public function index()
     {
-        return view('admin.tags.index');
+        $tags = Tag::orderBy('id','ASC')->paginate(5);
+        return view('admin.tags.index')->with('tags', $tags);
     }
 
     /**
@@ -37,7 +39,10 @@ class TagsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tag = new Tag($request->all());
+        $tag->save();
+        flash('Registro exitoso | Etiqueta: '.$tag->name.".")->success();
+        return redirect()->route('admin.tags.index');
     }
 
     /**
@@ -59,7 +64,8 @@ class TagsController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.tags.edit');
+        $tag = Tag::find($id);
+        return view('admin.tags.edit')->with('tag', $tag);
     }
 
     /**
@@ -70,8 +76,12 @@ class TagsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $tag = Tag::find($id);
+        $tag->fill($request->all());
+        $tag->save();
+        flash('Actualización Exitosa | Etiqueta: '.$tag->name.".")->success();
+        return redirect()->route('admin.tags.index');
     }
 
     /**
@@ -82,6 +92,9 @@ class TagsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::find($id);
+        $tag->delete();
+        flash('Eliminación Exitosa | Etiqueta: '.$tag->name.".")->error();
+        return redirect()->route('admin.tags.index');
     }
 }
