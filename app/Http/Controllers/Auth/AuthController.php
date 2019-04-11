@@ -32,6 +32,11 @@ class AuthController extends Controller
     {
         $this->middleware('guest', ['except' => 'getLogout']);
     }
+    
+    //When a user is successfully authenticated
+    protected $redirectPath = '/admin';
+    //When a user is not successfully authenticated
+    protected $loginPath = '/admin/auth/login';
 
     /**
      * Get a validator for an incoming registration request.
@@ -62,4 +67,11 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    protected function getLogin()
+    {
+        return view('admin.auth.login');
+    }
+
+
 }

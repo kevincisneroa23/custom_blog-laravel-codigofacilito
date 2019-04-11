@@ -11,6 +11,7 @@
 
     <!-- CONTENIDO -->
     <div class="col-md-10" id="content_nav">
+    @if(Auth::user()) <!-- VALIDACION USUARIO-->
       <!--OPCIONES-->
       <ul class="nav navbar-nav">
         <li><a href="{{ route('admin.index') }}"><i class="fa fa-home"></i> Inicio</a></li>
@@ -22,13 +23,16 @@
       <!--USUARIO-->
       <ul  class="nav navbar-nav" id="content_nav_user">
           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Kevin Cisnero <span class="caret"></span></a>  
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> 
+            {{ Auth::user()->name }}  <span class="caret"></span>
+          </a>  
           <ul class="dropdown-menu">
             <li><a href="#"><i class="fa fa-cog"></i> Preferencias</a></li>
-            <li><a href="{{ route('admin.auth.login') }}"><i class="fa fa-sign-out-alt"></i> Salir</a></li>
+            <li><a href="{{ route('admin.auth.logout') }}"><i class="fa fa-sign-out-alt"></i> Salir</a></li>
           </ul>
         </li>
       </ul>
+    @endif
     </div><!-- /#content_nav -->
 
 </div><!-- /.row -->

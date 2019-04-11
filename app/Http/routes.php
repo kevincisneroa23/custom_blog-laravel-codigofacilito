@@ -23,7 +23,7 @@ Route::get('article/{title}', [
 ]);
 
 // RUTAS DEL PANEL ADMIN
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
 	Route::get('/', [
 		'as' => 'admin.index',
@@ -44,8 +44,18 @@ Route::group(['prefix' => 'admin'], function(){
 
 
 // RUTAS DE AUTENTIFICACION
-Route::get('admin/auth/login', [
+Route::get('admin/auth/login',[ 
 	'as' => 'admin.auth.login',
-	function(){ return view('admin.auth.login'); }
+	'uses' => 'Auth\AuthController@getLogin'
+]);
+
+Route::post('admin/auth/login', [ 
+	'as' => 'admin.auth.login',
+	'uses' => 'Auth\AuthController@postLogin'
+]);
+
+Route::get('admin/auth/logout', [
+	'as' => 'admin.auth.logout',
+	'uses' => 'Auth\AuthController@getLogout'
 ]);
 
