@@ -12,18 +12,18 @@
 	</ol>
 	<h4 class="text-center text-uppercase custom-title" id="recientes">actualizar categoria</h4>	
 
-	{!! Form::open(['route' => 'admin.categories.store','method' => 'POST']) !!}
+	{!! Form::open(['route' => ['admin.categories.update', $category->id],'method' => 'PUT']) !!}
 	<div class="form-group">
 		{!! Form::label('name','Nombre') !!}
 		<div class="input-group">
 		<span class="input-group-addon"><i class="fas fa-list-ul"></i></span>
-		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nuevo nombre de categoria', 'required']) !!}
+		{!! Form::text('name', $category->name, ['class' => 'form-control', 'placeholder' => 'Nuevo nombre de categoria', 'required']) !!}
 		</div>
 	</div>
 	
 	<!-- =====BOTONES===== -->
 	<div class="form-group text-center">	
-		<button type="submit" class="btn btn-primary">
+		<button type="submit" class="btn btn-primary" onclick="return confirm('Esta seguro de actualizar')" >
 			<i class="fas fa-save"></i>
 			Actualizar
 		</button>

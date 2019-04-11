@@ -28,21 +28,22 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php for ($i=0; $i < 5 ; $i++) {  ?>
+		@foreach($categories as $category)
 			<tr>
-			<td> ID</td>
-			<td> Nombre</td>
+			<td> {{ $category->id }} </td>
+			<td> {{ $category->name }} </td>
 			<td>
-				<a href="{{ route('admin.categories.edit', 'id' ) }}" class="btn btn-warning">  
+				<a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-warning">  
 					<i class="fas fa-edit"></i> 
 				</a>
-
-				<a href="{{ route('admin.categories.destroy', 'id') }}" class="btn btn-danger" onclick="return confirm('Esta segura de eliminarlo')"> 
+				{!! Form::open(['route' => ['admin.categories.destroy', $category->id ], 'method' => 'DELETE', 'class' => 'inline-block']) !!}
+				<button type="submit" class="btn btn-danger" onclick="return confirm('Esta segura de eliminarlo')"> 
 					<i class="fas fa-trash-alt"></i>
-				</a>
+				</button>
+				{!! Form::close() !!}
 			</td>
 			</tr>
-		<?php } ?>
+		@endforeach
 	</tbody>
 	</table>
 </div><!--/.col-->
