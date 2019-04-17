@@ -7,6 +7,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+//Add
+use Illuminate\Http\Request;
+use App\Http\Requests;
 
 class AuthController extends Controller
 {
@@ -71,6 +74,36 @@ class AuthController extends Controller
     protected function getLogin()
     {
         return view('admin.auth.login');
+    }
+
+    public function getRegister()
+    {
+        return view('admin.auth.register');
+    }
+
+    public function postRegister(Request $request)
+    {
+
+        $user = new User($request->all());
+
+         //Manipulacion de Imagenes...
+        
+        if($request->img_perfil)
+        {
+            $file = $request->file('img_perfil');
+            $name = 'blog_avatar_'. time() . '.' . $file->getClientOriginalExtension();
+            $path = public_path() . '\images\perfiles\\';
+            $file->move($path, $name);
+            //SET
+            $user->img_perfil = $name;
+        }
+
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        flash("Registro exitoso | Usuario: ".$user->name.".")->success();
+        return redirect()->route('admin.auth.login');
+        
     }
 
 

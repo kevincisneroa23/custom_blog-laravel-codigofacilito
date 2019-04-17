@@ -17,6 +17,8 @@
 
 	<div id="main_content">
 		<div class="container-fluid">
+			@include('flash::message')
+	  		@include('layouts.partials.errors')
 			@yield('content')
 		</div><!--/.container-->
 	</div><!--/#main_content-->
@@ -27,6 +29,7 @@
 
 	<script type="text/javascript" src="{{ asset('plugins/jquery/jquery-2.1.4.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('plugins/bootstrap-filestyle/bootstrap-filestyle.js') }}"></script>
 	@yield('js')
 </div><!--/#main_container-->
 </body>
