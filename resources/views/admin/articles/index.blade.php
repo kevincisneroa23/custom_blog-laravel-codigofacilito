@@ -55,25 +55,27 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php for($i = 0; $i <= 5; $i++){ ?>
+		@foreach($articles as $article)
 		<tr>
-			<td>1</td>
-			<td>2</td>
-			<td>3</td>
-			<td>4</td>
+			<td>{{ $article->id }}</td>
+			<td>{{ $article->title }}</td>
+			<td>{{ $article->category->name }}</td>
+			<td>{{ $article->user->name }}</td>
 			<td>
 				<!-- Large modal -->
 				<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fas fa-eye"></i></button>
 
-				<a href="{{ route('admin.articles.edit', 'id') }}" class="btn btn-warning">
+				<a href="{{ route('admin.articles.edit', $article->id ) }}" class="btn btn-warning">
 					<i class="fas fa-edit"></i>
 				</a>
-				<a href="{{ route('admin.articles.destroy', 'id') }}" class="btn btn-danger" onclick="return confirm('¿Esta seguro de eliminarlo?')">
+				{!! Form::open(['route' => ['admin.articles.destroy', $article->id ], 'method' => 'DELETE', 'class' => 'inline-block']) !!}
+				<button type="submit" class="btn btn-danger" onclick="return confirm('¿Esta seguro de eliminarlo?')">
 					<i class="fas fa-trash"></i>
-				</a>
+				</button>
+				{!! Form::close() !!}
 			</td>
 		</tr>
-		<?php } ?>
+		@endforeach()
 	</tbody>
 	</table>
 </div><!--/.col-->

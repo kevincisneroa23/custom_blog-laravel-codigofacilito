@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    protected $table = "Articles";
+    protected $table = "articles";
     protected $fillable = ['title','content','category_id','user_id'];
 
 
@@ -23,5 +23,10 @@ class Article extends Model
     public function tags()
     {
     	return $this->belongsToMany('App\Tag');
+    }
+
+    public function image()
+    {
+        return $this->hasMany('App\Image');
     }
 }

@@ -20,7 +20,7 @@
 
 	<div class="form-group">
 		{!! Form::label('category_id','Categoria') !!}
-		{!! Form::select('category_id', ['0' => 'Programacion', '1' => 'Diseño'] , null, ['class' => 'form-control select-category', 'placeholder' => 'Seleccione una cateoria...','required']) !!}
+		{!! Form::select('category_id', $categories , null, ['class' => 'form-control select-category', 'placeholder' => 'Seleccione una cateoria...','required']) !!}
 	</div>
 
 	<div class="form-group">
@@ -30,12 +30,12 @@
 
 	<div class="form-group">
 		{!! Form::label('tags','Etiquetas') !!}
-		{!! Form::select('tags[]', ['0' => 'Programacion', '1' => 'Diseño'] , null, ['class' => 'form-control select-tag', 'multiple', 'required']) !!}
+		{!! Form::select('tags[]', $tags , null, ['class' => 'form-control select-tag', 'multiple', 'required']) !!}
 	</div>
 
 	<div class="form-group">
-		{!! Form::label('image_portada', 'Imagen de Portada') !!}
-		{!! Form::file('image_portada', ['class' => 'filestyle', 'id' => 'image_portada', 'data-buttonText' => 'Buscar...']) !!}
+		{!! Form::label('image', 'Imagen de Portada') !!}
+		{!! Form::file('image', ['class' => 'filestyle', 'id' => 'image', 'data-buttonText' => 'Buscar...']) !!}
 	</div>
 
 	<!-- =====BOTONES===== -->
