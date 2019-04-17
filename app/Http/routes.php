@@ -22,6 +22,17 @@ Route::get('article/{title}', [
 	'uses' => 'FrontController@show'
 ]);
 
+Route::get('admin/auth/register', [
+	'as' => 'admin.auth.register',
+	'uses' => 'Auth\AuthController@getRegister'
+]);
+
+Route::post('admin/auth/register', [
+	'as' => 'admin.auth.register',
+	'uses' => 'Auth\AuthController@postRegister'
+]);
+
+
 // RUTAS DEL PANEL ADMIN
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 

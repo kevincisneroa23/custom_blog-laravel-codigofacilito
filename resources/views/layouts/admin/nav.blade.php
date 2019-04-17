@@ -4,7 +4,7 @@
 
     <!-- LOGO -->
     <div class="col-md-2" id="logo_nav">
-      <a href="{{ route('front.index') }}">
+      <a href="{{ route('front.index') }}" target="_blank">
         <img src="{{ asset('images/logo_custom_blog.png')}}" alt="Responsive image">
       </a>
     </div><!-- /#logo_nav -->
@@ -27,7 +27,7 @@
             {{ Auth::user()->name }}  <span class="caret"></span>
           </a>  
           <ul class="dropdown-menu">
-            <li><a href="#"><i class="fa fa-cog"></i> Preferencias</a></li>
+            <li><a href="{{ route('front.index') }}" target="_blank" ><i class="fab fa-blogger"></i> Blog Frontal </a></li>
             <li><a href="{{ route('admin.auth.logout') }}"><i class="fa fa-sign-out-alt"></i> Salir</a></li>
           </ul>
         </li>

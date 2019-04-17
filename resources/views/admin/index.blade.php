@@ -5,7 +5,7 @@
 <div class="row">
 <div class="col-md-12">
 
-	<h1>hello Admin</h1>
+	<h1>Bienvenido <u>{{ Auth::user()->name }} </u></h1>
 
 </div><!--/.col-->
 </div><!--/.row-->
