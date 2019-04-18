@@ -10,7 +10,7 @@ use App\Article;
 use App\Category;
 use App\Tag;
 use App\Image;
-use DB;
+use App\Http\Requests\ArticleRequest;
 
 class ArticlesController extends Controller
 {
@@ -48,7 +48,7 @@ class ArticlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
         $article = new Article($request->all());
         $article->user_id = \Auth::user()->id;

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserUpdateRequest;
 
 class UsersController extends Controller
 {
@@ -38,7 +40,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {   
         $user = new User($request->all());
 
@@ -51,6 +53,8 @@ class UsersController extends Controller
             $file->move($path, $name);
             //SET
             $user->img_perfil = $name;
+        }else{
+            $user->img_perfil = 'blog_avatar_default.png';
         }
 
         $user->password = bcrypt($request->password);
@@ -89,7 +93,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
         $user = User::find($id);
          //Manipulacion de Imagenes...

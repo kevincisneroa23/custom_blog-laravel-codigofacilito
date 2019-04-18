@@ -10,8 +10,7 @@ COLORES
 
 body{
 	background-color:#d2d2d2 ;
-	position: relative;
-	padding-top: 65px;
+	position: relative;	
 }
 
 *{
@@ -22,6 +21,7 @@ div#main_container{
 	padding   : 0px;
 	background: #262626;
 	min-height: 600px;
+	padding-top: 65px;
 }
 
 div#main_content{
