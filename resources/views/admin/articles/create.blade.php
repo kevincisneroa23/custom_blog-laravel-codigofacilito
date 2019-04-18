@@ -14,28 +14,33 @@
 
 	{!! Form::open(['route' => 'admin.articles.store', 'method' => 'POST', 'files' => true]) !!}
 	<div class="form-group">
+		<i class="fa fa-asterisk text-danger"></i>
 		{!! Form::label('title','Titulo') !!}
 		{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Titulo del articulo', 'require']) !!}
 	</div>
 
 	<div class="form-group">
+		<i class="fa fa-asterisk text-danger"></i>
 		{!! Form::label('category_id','Categoria') !!}
 		{!! Form::select('category_id', $categories , null, ['class' => 'form-control select-category', 'placeholder' => 'Seleccione una cateoria...','required']) !!}
 	</div>
 
 	<div class="form-group">
+		<i class="fa fa-asterisk text-danger"></i>
 		{!! Form::label('content','Contenido') !!}
 		{!! Form::textarea('content', null, ['class' => 'form-control textarea-content','required']) !!}
 	</div>
 
 	<div class="form-group">
+		<i class="fa fa-asterisk text-danger"></i>
 		{!! Form::label('tags','Etiquetas') !!}
 		{!! Form::select('tags[]', $tags , null, ['class' => 'form-control select-tag', 'multiple', 'required']) !!}
 	</div>
 
 	<div class="form-group">
+		<i class="fa fa-asterisk text-danger"></i>
 		{!! Form::label('image', 'Imagen de Portada') !!}
-		{!! Form::file('image', ['class' => 'filestyle', 'id' => 'image', 'data-buttonText' => 'Buscar...']) !!}
+		{!! Form::file('image', ['class' => 'filestyle', 'id' => 'image', 'data-buttonText' => 'Buscar...'], 'required' ) !!}
 	</div>
 
 	<!-- =====BOTONES===== -->
@@ -53,8 +58,21 @@
 			Atras
 		</a>
 	</div>
-
 	{!! Form::close() !!}
+
+	<div class="form-group container_help">
+		<hr>
+		<i class="fa fa-question-circle"></i>
+		<u><b>Ayuda:</b></u> Todos los campos con <i class="fa fa-asterisk text-danger"></i> son obligatorios.
+
+		<button class="btn btn-info btn-xs"  type="button" data-toggle="collapse" data-target="#box_help" aria-expanded="false" aria-controls="box_help">Ver mas. <i class="fa fa-question-circle"></i></button>
+		
+		<ul class="collapse" id="box_help">
+			<li><b>Titulo:</b> Minimo: 8, Maximo 150 caracteres y debe ser único.</li>
+			<li><b>Contenido:</b> Minimo: 50 caracteres.</li>
+			<li><b>Etiquetas:</b> Minimo: 1 , Maximo: 5 seleccionadas.</li>
+		</ul>
+	</div>
 </div><!--/.col-->
 
 </div><!--/.row-->

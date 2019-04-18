@@ -11,6 +11,7 @@
 
 	{!! Form::open(['route' => 'admin.auth.register','method' => 'POST', 'files' => true]) !!}
 	<div class="form-group">
+		<i class="fa fa-asterisk text-danger"></i>
 		{!! Form::label('name','Nombre') !!}
 		<div class="input-group">
 		<span class="input-group-addon"><i class="fas fa-user"></i></span>
@@ -19,6 +20,7 @@
 	</div>
 
 	<div class="form-group">
+		<i class="fa fa-asterisk text-danger"></i>
 		{!! Form::label('email','Correo Electronico') !!}
 		<div class="input-group">
 		<span class="input-group-addon"><i class="fas fa-envelope"></i></span>
@@ -27,6 +29,7 @@
 	</div>
 
 	<div class="form-group">
+		<i class="fa fa-asterisk text-danger"></i>
 		{!! Form::label('password','Contraseña') !!}
 		<div class="input-group">
 		<span class="input-group-addon"><i class="fas fa-key"></i></span>
@@ -56,6 +59,19 @@
 		</a>
 	</div>
 	{!! Form::close() !!}
+	<div class="form-group container_help">
+		<hr>
+		<i class="fa fa-question-circle"></i>
+		<u><b>Ayuda:</b></u> Todos los campos con <i class="fa fa-asterisk text-danger"></i> son obligatorios.
+
+		<button class="btn btn-info btn-xs"  type="button" data-toggle="collapse" data-target="#box_help" aria-expanded="false" aria-controls="box_help">Ver mas. <i class="fa fa-question-circle"></i></button>
+		
+		<ul class="collapse" id="box_help">
+			<li><b>Nombre:</b> Minimo: 4, Maximo 120 caracteres.</li>
+			<li><b>Correo:</b> Minimo: 4, Maximo 100 caracteres, Ej: correo@gmail.com .</li>
+			<li><b>Contraseña:</b> Minimo: 4 , Maximo: 250 caracteres.</li>
+		</ul>
+	</div>
 </div><!--/.col-->
 
 @endsection()

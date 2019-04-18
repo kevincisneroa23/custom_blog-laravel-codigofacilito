@@ -44,11 +44,11 @@
 
 
 <div class="col-md-12">
-	<table class="table table-striped table-hover custom-table">
+	<table class="table table-striped table-hover table-responsive custom-table">
 	<thead>
 		<tr>
 			<th>ID</th>
-			<th>Titulo</th>
+			<th class="col-md-6">Titulo</th>
 			<th>Categoria</th>
 			<th>Usuario</th>
 			<th>Opciones</th>
@@ -63,7 +63,7 @@
 			<td>{{ $article->user->name }}</td>
 			<td>
 				<!-- Large modal -->
-				<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fas fa-eye"></i></button>
+				<button type="button" class="btn btn-info hidden" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fas fa-eye"></i></button>
 
 				<a href="{{ route('admin.articles.edit', $article->id ) }}" class="btn btn-warning">
 					<i class="fas fa-edit"></i>

@@ -144,6 +144,16 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => "'Título'",
+        'category_id' => "'Categoría'",
+        'content' => "'Contenido'",
+        'tags' => "'Etiquetas'",
+        'image' => "'Imagen'",
+        'name' => "'Nombre'",
+        'email' => "'Correo'",
+        'type' => "'Tipo'",
+        'image_perfil' => "'Imagen de Perfil'"
+    ],
 
 ];

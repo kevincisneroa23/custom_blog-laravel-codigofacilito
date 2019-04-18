@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 //Add
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\RegisterRequest;
 
 class AuthController extends Controller
 {
@@ -81,7 +82,7 @@ class AuthController extends Controller
         return view('admin.auth.register');
     }
 
-    public function postRegister(Request $request)
+    public function postRegister(RegisterRequest $request)
     {
 
         $user = new User($request->all());
@@ -96,6 +97,8 @@ class AuthController extends Controller
             $file->move($path, $name);
             //SET
             $user->img_perfil = $name;
+        }else{
+            $user->img_perfil = "blog_avatar_default.png";
         }
 
         $user->password = bcrypt($request->password);
