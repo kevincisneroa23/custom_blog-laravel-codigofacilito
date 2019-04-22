@@ -10,7 +10,7 @@
 	  <li><a href="{{ route('admin.articles.index') }}">Articles</a></li>
 	  <li class="active">Crear</li>
 	</ol>
-	<h4 class="text-center text-uppercase custom-title" id="recientes">Listado de articulos</h4>	
+	<h4 class="text-center text-uppercase custom-title" id="recientes">Listado de articulos</h4>
 </div><!--/.col-->
 
 <div class="col-md-6">
@@ -27,12 +27,12 @@
 	<!-- ====BUSCADOR ARTICULOS==== -->
 	{!! Form::open(['route' => 'admin.articles.index', 'method' => 'get', 'class' => 'pull-right']) !!}
 	<div class="input-group">
-		{!! Form::text('title', null , ['class' => 'form-control', 'placeholder' => 'Buscar articulo', 'required', 'aria-describedby' => 'search']) !!}
+		{!! Form::text('searchArticle', $searchArticle , ['class' => 'form-control', 'placeholder' => 'Buscar articulo por titulo', 'required', 'aria-describedby' => 'search']) !!}
 		<span class="input-group-btn">
 			<button type="submit" class="btn btn-default" id="search">
 				<i class="fas fa-search"></i>
 			</button>
-			<a href="{{ route('admin.articles.index') }}" class="btn btn-default">
+			<a href="{{ route('admin.articles.index') }}" class="btn btn-default" >
 				<i class="fas fa-eraser"></i>
 			</a>
 		</span>

@@ -43,8 +43,14 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany('App\Article');
     }
 
-    public function admin(){
+    public function admin()
+    {
         return $this->type === 'admin';
+    }
+
+    public function scopeSearch($query, $searchUser)
+    {
+        return $query->where('name', 'LIKE', "%$searchUser%");
     }
 
 
