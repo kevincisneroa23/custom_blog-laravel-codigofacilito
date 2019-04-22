@@ -29,4 +29,9 @@ class Article extends Model
     {
         return $this->hasMany('App\Image');
     }
+
+    public function scopeSearch($query, $searchArticle)
+    {
+        return $query->where('title', 'LIKE', "%$searchArticle%");
+    }
 }
