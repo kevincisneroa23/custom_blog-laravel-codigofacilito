@@ -25,7 +25,7 @@ class Article extends Model
     	return $this->belongsToMany('App\Tag');
     }
 
-    public function image()
+    public function images()
     {
         return $this->hasMany('App\Image');
     }
@@ -34,4 +34,6 @@ class Article extends Model
     {
         return $query->where('title', 'LIKE', "%$searchArticle%");
     }
+
+
 }

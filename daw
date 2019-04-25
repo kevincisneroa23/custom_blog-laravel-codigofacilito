@@ -1,0 +1,23 @@
+[33mc8f328b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m Merge branch 'backend_blog'
+[33m9f6bb8e[m[33m ([m[1;32mbackend_blog[m[33m)[m Scope barra de busquedas en Admin: usuario,categorias,etiqueta y articulos
+[33ma9d54b2[m Requests : registro, usuarios, categorias, etiquetas y articulos
+[33m417b028[m Registro de usuario invitado y modificaciones de nav front
+[33me205ec6[m[33m ([m[1;31morigin/master[m[33m)[m Requests : registro, usuarios, categorias, etiquetas y articulos
+[33mf48de49[m Registro de usuario invitado y modificaciones de nav front
+[33m2ccd1eb[m Articulos CRUD index, create, edit, delete
+[33m9d9cbe1[m Etiqueta CRUD index, create, edit, destroy y controller
+[33m8e4314b[m Categorias CRUD index, create, edit y controller
+[33ma5da3b5[m definicion de modelos
+[33m277436e[m autentificacion de usuario
+[33m0e0ac51[m Usuarios CRUD index,create, edit & delete
+[33ma636acf[m migraciones
+[33m425fef3[m[33m ([m[1;32mfrontend_blog[m[33m)[m vista login
+[33m8512909[m vista articulos(index,create y editar) y otros detalles
+[33m297dfae[m vista etiqueta(index,create y editar) y breadcrumbs
+[33mff04a4e[m vista categorias (index,create y editar) y correcciones a vista usuario
+[33meac22c9[m vista usuarios (index, crear y editar) y plugin bootstrap-style
+[33me613183[m frontend all
+[33m9668e5e[m Index de front y admin , menu v2 y aside v1
+[33mfab4357[m Pantalla principal y menu-v1
+[33m7256b1e[m readme inicial
+[33mb04a4a5[m[33m ([m[1;33mtag: 0.1[m[33m)[m inicializando practica personal

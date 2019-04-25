@@ -18,4 +18,9 @@ class Category extends Model
     {
     	return $query->where('name', 'LIKE', "%$searchCategory%");
     }
+
+    public function scopeSearchByCategory($query, $category)
+    {
+        return $query->where('name', '=', $category);
+    }
 }

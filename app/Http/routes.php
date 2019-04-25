@@ -17,12 +17,25 @@ Route::get('/', [
 	'uses' => 'FrontController@index'
 ]);
 
-Route::get('article/{title}', [
+Route::get('article/{searchArticle?}', [
+	'as' => 'front.search.article',
+	'uses' => 'FrontController@searchByArticle'
+]);
+
+Route::get('category/{name?}', [
+	'as' => 'front.search.category',
+	'uses' => 'FrontController@searchByCategory'
+]);
+
+Route::get('tag/{name?}', [
+	'as' => 'front.search.tag',
+	'uses' => 'FrontController@searchByTag'
+]);
+
+Route::get('article={title}', [
 	'as' => 'front.show.article',
 	'uses' => 'FrontController@show'
 ]);
-
-
 
 // RUTAS DEL PANEL ADMIN
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
