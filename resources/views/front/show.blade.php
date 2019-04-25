@@ -7,7 +7,7 @@
   <!-- =====PORTADA=====-->
   <div class="portada-container">
     <div class="portada-top-extra">
-      <span class="label label-primary">Programacion</span>
+      <span class="label label-primary">{{$article->category->name}}</span>
 
       <div class="redes pull-right">
         <span class="label label-info"><i class="fab fa-twitter"></i></span>
@@ -15,37 +15,23 @@
         <span class="label label-default"><i class="fas fa-envelope"></i></span>  
       </div>
     </div>
-    <img class="img-responsive portada-img" src="{{ asset('images/pruebas/video2brain.jpg') }}">
-    <h4 class="text-justify portada-caption">TITULO DE ARTICULO Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit</h4> 
+    @foreach($article->images as $image)
+      <img  class="img-responsive portada-img" src="{{ asset('images/articles/'.$image->name) }}">
+    @endforeach
+
+    <h4 class="text-justify portada-caption">{{ $article->title}}</h4> 
   </div>
 
 <div class="col-md-9">
 
   <!-- ===== ARTICULO ===== -->
   <i class="fa fa-user"></i>
-  <strong class="text-uppercase">Kevin Cisnero</strong>
-  <span class="label custom-label pull-right"><i class="glyphicon glyphicon-time"></i> Hace 1 Hora fue Actualizado</span>&nbsp;
-  <span class="label custom-label pull-right"><i class="fa fa-star"></i> 5</span>
+  <strong class="text-uppercase">{{$article->user->name}}</strong>
+  <span class="label custom-label pull-right"><i class="glyphicon glyphicon-time"></i> {{ $article->created_at->diffForHumans() }}</span>&nbsp;
+  <span class="label custom-label pull-right"><i class="fa fa-star"></i> ? </span>
   <hr>
   <p class="text-justify">
-  	<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur similique, beatae. Consequatur sapiente optio excepturi accusamus nulla nemo, cum voluptatibus, explicabo debitis maiores natus iure harum repellat tempora? Voluptatibus, hic.</span>
-  	<span>Nam dolore, nihil rem earum, laborum ea dolores autem iste reiciendis, provident incidunt mollitia. Iste quis rem id cumque perferendis, debitis voluptates quos ab numquam. Minima quis non consectetur ipsa.</span>
-  	<span>Deleniti id necessitatibus natus fugiat mollitia maxime est. Dolores doloremque, impedit dolor blanditiis aspernatur, obcaecati doloribus, recusandae cupiditate vitae quasi labore, dolore adipisci necessitatibus. Corporis quibusdam modi, alias dolores aliquid.</span>
-    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sed vel tenetur doloribus, itaque eveniet. Cumque eveniet quo obcaecati. Tempore vero aut ea rem magnam alias, obcaecati voluptate similique doloribus.</span>
-    <span>Nulla doloremque eaque, aliquam aspernatur aperiam. Dolor, sed cupiditate? Modi est maiores architecto consectetur consequuntur dignissimos assumenda laboriosam quia repudiandae perspiciatis sed, facilis commodi numquam error odio veniam minus nihil.</span>
-    <span>Inventore saepe rem id, repellat velit hic assumenda consequuntur, corporis adipisci quia, aperiam tempora. A tempore eligendi neque unde ipsum optio alias doloribus perferendis ducimus. Nulla excepturi, ex enim quasi.</span>
-    <span>Tenetur cumque pariatur aperiam eius corrupti nisi non odio, eveniet, necessitatibus quas in culpa aliquam suscipit. Voluptatum exercitationem error maiores provident. Atque omnis odio rerum, repudiandae suscipit quam delectus, officiis!</span>
-    <span>Accusamus eligendi, nostrum maiores incidunt vero. Culpa enim quas perspiciatis in, a eaque autem sapiente, dignissimos, ut illo aspernatur hic accusantium est cupiditate, alias blanditiis veritatis quaerat ea laboriosam laudantium.</span>
-    <span>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deserunt esse consectetur, doloribus veritatis possimus officiis quae voluptatibus necessitatibus dolorum, aut vitae ipsum nesciunt eaque sapiente distinctio velit reiciendis expedita.</span>
-    <span>Quos in, accusantium laboriosam fugit, fugiat necessitatibus minus temporibus beatae neque soluta expedita dolorum modi atque. Omnis, repellendus praesentium eveniet labore facere, at accusamus porro, fuga mollitia quam, possimus laborum.</span>
-    <span>Labore ad, maiores dolor nostrum nulla alias aspernatur earum culpa tenetur, est, dolorum omnis aliquid. Deserunt id recusandae quaerat delectus dolor placeat alias incidunt asperiores rem cupiditate, fugit voluptate quasi!</span>
-    <span>Placeat quidem, neque veniam, laborum esse, iste architecto eligendi quisquam, sequi necessitatibus optio. Blanditiis quam, sit amet repudiandae maiores similique voluptatem deserunt, quaerat porro recusandae optio eaque, odit harum ullam.</span>
-    <span>Consectetur voluptatem unde nam error temporibus, tempore rem est. Distinctio tempore, similique assumenda, corporis quae harum, eum aspernatur nostrum quidem numquam laboriosam veritatis cumque ab optio doloribus doloremque vel debitis.</span>
-    <span>Explicabo perferendis ullam tempore atque molestias quisquam est quos dolorem, accusantium hic quas voluptatum expedita dolorum illo quia tenetur placeat animi! Sunt consequatur ipsum laboriosam perspiciatis, quo officia exercitationem culpa.</span>
-    <span>Odit in eius officiis, incidunt ad quia voluptatibus eaque. Alias aperiam eaque debitis, expedita vel recusandae quos aspernatur laudantium rem, nam vero! Fuga ad nisi, adipisci cumque repudiandae cupiditate repellat!</span>
-    <span>Architecto neque quis aliquid magni voluptatibus doloremque veritatis qui cum numquam nulla pariatur quibusdam vero impedit dolore ad, quisquam molestiae praesentium iure, quia, ipsam, similique illo cupiditate temporibus sunt. Natus!</span>
-    <span>Fugiat ipsa atque sunt temporibus, necessitatibus adipisci suscipit. Aperiam sed voluptatem voluptates quos ducimus ratione est eligendi nam! Recusandae officiis iste optio, accusantium fugit nihil quo. In et laudantium, labore?</span>
-    <span>Veritatis et beatae numquam esse, nisi. Harum ullam ratione blanditiis tempore voluptatibus ipsa ad neque praesentium quidem quos debitis hic dicta iure, corporis repellat. Vel quae obcaecati sunt dicta eos!</span>
+  	{!! $article->content !!}
   </p>
   
   <hr>
@@ -58,10 +44,7 @@
       </a>
     </div>
     <div class="media-body">
-      <h3 class="media-heading">Kevin Cisnero <br><small>@kevinNick</small></h3>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      <h3 class="media-heading">{{ $article->user->name }} <br><small> {{ $article->user->email }}</small></h3>
     </div>
   </div>
 
@@ -70,7 +53,7 @@
   <!-- ===== CATEGORIA Y ETIQUETAS ===== -->
   <div class="text-let custom-section">
   	<span class="category">
-  	Categoria: <span class="label label-primary">Programacion</span>
+  	Categoria: <span class="label label-primary">{{ $article->category->name }}</span>
   	</span>
     
     <div class="redes pull-right">
@@ -81,9 +64,9 @@
 
   	<span class="tags">
   	Etiquetas: 
-  	<span class="label label-default">Tag-1</span>
-  	<span class="label label-default">Tag-1</span>
-  	<span class="label label-default">Tag-1</span>
+    @foreach($article->tags as $tag)
+  	<span class="label label-default">{{ $tag->name }}</span>
+    @endforeach
   	</span>
   </div><!--/.custom-section-->
 
@@ -92,43 +75,30 @@
     <div class="col-md-12">
       <h4 class="text-center custom-title">Temas Relacionados</h4>  
     </div><!--/.col-->
+    @foreach($articlesRelationados as $articleRelacionado)
     <div class="col-md-6">
       <div class="media custom-media">
         <div class="media-left">
         <a href="#">
-          <img class="media-object" src="{{ asset('images/pruebas/video2brain.jpg') }}" alt="..." width="150">
+          @foreach($articleRelacionado->images as $image2)
+          <img class="media-object" src="{{ asset('images/articles/'.$image2->name) }}" alt="..." width="150" height="120">
+          @endforeach
         </a>
         </div>
         <div class="media-body">
-        <h4 class="media-heading"><a href="#">Media heading</a></h4>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaincididunt.</p>
+        <h4 class="media-heading"><a href="#">{{ substr($articleRelacionado->title, 0, 18) }}...</a></h4>
+          <p class="text-justify">{!! substr($articleRelacionado->content, 0, 40) !!}</p>
           <div class="extra">
-            <span class="badge bg-azul" title="Programacion"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;P</span>  
-            <span class="badge bg-azul"><i class="fa fa-star"></i> 5</span>
-            <span class="badge bg-azul"><i class="glyphicon glyphicon-time"></i> 1 Hora</span>
+            <span class="badge bg-azul" title="Programacion"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;{{ substr($articleRelacionado->category->name, 0 , 1) }}</span>  
+            <span class="badge bg-azul"><i class="fa fa-star"></i> ?</span>
+            <span class="badge bg-azul"><i class="glyphicon glyphicon-time"></i>{{ $articleRelacionado->created_at->diffForHumans() }}</span>
           </div><!--/.extra-->  
         </div><!--/.media-body-->
       </div><!--/.media-->
     </div><!--/.col-->
-    <div class="col-md-6">
-      <div class="media custom-media">
-        <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="{{ asset('images/pruebas/video2brain.jpg') }}" alt="..." width="150">
-        </a>
-        </div>
-        <div class="media-body">
-        <h4 class="media-heading"><a href="#">Media heading</a></h4>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaincididunt.</p>
-        
-          <div class="extra">
-            <span class="badge bg-azul" title="Programacion"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;P</span>  
-            <span class="badge bg-azul"><i class="fa fa-star"></i> 5</span>
-            <span class="badge bg-azul"><i class="glyphicon glyphicon-time"></i> 1 Hora</span>
-          </div><!--/.extra--> 
-        </div><!--/.media-body-->
-      </div><!--/.media-->
-    </div><!--/.col-->
+    @endforeach
+
+
   </div><!--/.row-->
   
   <!-- ===== COMENTARIOS ===== -->
@@ -142,8 +112,6 @@
     <div class="panel-body">
       <div class="panel panel-primary">
         <div class="panel-body">
-
-
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -154,30 +122,24 @@
 
 </div><!--/.col-->  
 <div class="col-md-3">
-  
 <!-- ===== ASIDE RECIENTES  ===== -->  
-
-  <!-- ===== RECIENTES  ===== -->
-  <div class="row">
-    <div class="col-md-12">
-      <h4 class="text-center custom-title">Recientes</h4>  
-    </div><!--/.col-->
-    <div class="col-md-12">
+  @foreach($articlesRecends as $articleRecend)
+    <h4 class="text-center custom-title">Recientes</h4>  
     <div class="thumbnail custom-thumbnail">
-      <img src="{{ asset('images/pruebas/video2brain.jpg') }}" alt="...">
-      <div class="caption text-justify">
-        <h3><a href="{{ route('front.show.article', 'title') }}"> Thumbnail label titel title title tile</a></h3>    
+      @foreach($articleRecend->images as $image3)
+        <img src="{{ asset('images/articles/'.$image3->name) }}" >
+      @endforeach
+      <div class="caption text-center">
+        <h4><a href="{{ route('front.show.article', 'title') }}">{{ substr($articleRecend->title,0,50) }}...</a></h4>    
       </div><!--/.caption-->
       <div class="extra text-center">
-        <span class="badge bg-azul" title="Programacion"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;Pro</span>  
-        <span class="badge bg-azul"><i class="fa fa-star"></i> 5</span>
-        <span class="badge bg-azul"><i class="glyphicon glyphicon-time"></i> 1 Hora</span>
+
+        <span class="badge bg-azul" title="{{ $articleRecend->category->name }}"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;{{ substr($articleRecend->category->name,0,1) }}
+        </span>  
+        <span class="badge bg-azul"><i class="glyphicon glyphicon-time"></i> {{ $articleRecend->created_at->diffForHumans() }}</span>
       </div><!--/.extra--> 
     </div><!--/.thumbnail-->
-    </div><!--/.col-->
-  </div><!--/.row-->
-    
-
+  @endforeach
 </div><!--/.col-->  
 </div><!--/.row-->
 

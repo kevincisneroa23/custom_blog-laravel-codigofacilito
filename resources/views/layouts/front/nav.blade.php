@@ -10,15 +10,15 @@
 
     <!-- BUSCADOR -->
     <div class="col-md-3" id="search_nav">
-      <form >
+      {!! Form::open(['route' => 'front.search.article', 'method' => 'GET']) !!}
         <div class="input-group">
           <span class="input-group-addon" id="search_nav_btn">
             <span class="glyphicon  glyphicon-search"></span>
           </span>
-
-          <input type="text"  placeholder="Buscar..." id="search_nav_input" aria-describedby="search_nav_btn">
+          <?php $searchArticle = isset($_REQUEST['searchArticle']) ? $_REQUEST['searchArticle'] : NULL ; ?>
+          <input type="text"  placeholder="Buscar articulo..." value="{{ $searchArticle }}" name="searchArticle" id="search_nav_input" aria-describedby="search_nav_btn">
         </div>
-      </form>
+      {!! Form::close() !!}
     </div><!-- /#search_nav -->
 
     <!-- CONTENIDO -->

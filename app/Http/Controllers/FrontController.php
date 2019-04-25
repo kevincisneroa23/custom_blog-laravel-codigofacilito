@@ -6,9 +6,18 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Article;
+use App\Category;
+use App\Tag;
+use Carbon\Carbon;
 
 class FrontController extends Controller
 {
+    
+    public function __construct()
+    {
+        Carbon::setlocale('es');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,72 +25,74 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view('front.index');
+        $articles = Article::orderBy('id','DESC')->paginate(6);
+
+        $articles->each(function($articles){
+            $articles->images;
+            $articles->category;
+        });
+
+        return view('front.index')->with([
+            'articles' => $articles
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($title)
     {
-        return view('front.show')->with('title', $title);
+        $article = Article::where('slug','=', $title)->first();
+
+        $articlesRelationados = Article::where('category_id','=', $article->category_id)->take(4)->get();
+        $articlesRecends = Article::orderBy('id','ASC')->take(3)->get();
+        //dd($articlesRecends);
+
+        return view('front.show')->with([
+            'article' => $article, 
+            'articlesRelationados' => $articlesRelationados,
+            'articlesRecends' => $articlesRecends
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function searchByArticle(Request $request)
+    {   
+
+        $articles = Article::search($request->searchArticle)->orderBy('id', 'DESC')->paginate(6);
+        $articles->each(function($articles){
+            $articles->image;
+            $articles->category;
+        });
+
+        return view('front.index')->with([
+            'articles' => $articles,
+            'title' => $request->searchArticle
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function searchByCategory($name)
     {
-        //
+        $category = Category::searchByCategory($name)->first();
+        $articles = $category->articles()->paginate(6);
+
+        $articles->each(function($articles){
+            $articles->images;
+            $articles->category;
+        });
+
+        return view('front.index')->with('articles', $articles);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function searchByTag($name)
     {
-        //
+        $tag = Tag::searchByTag($name)->first();
+        $articles = $tag->articles()->paginate(6);
+
+        $articles->each(function($articles){
+            $articles->images;
+            $articles->category;
+        });
+
+        return view('front.index')->with('articles', $articles);
     }
+
+
 }

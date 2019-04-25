@@ -18,13 +18,13 @@
 	<div class="form-group">
 		{!! Form::label('password', 'Contraseña') !!}
 		<div class="input-group">
-			<span class="input-group-addon"> <i class="fa fa-key"></i> </span>
+			<span class="input-group-addon"> <i class="fa fa-lock"></i> </span>
 			{!! Form::password('password', ['class' => 'form-control', 'placeholder' => '********', 'required']) !!}
 		</div><!--/.form-group-->
 	</div><!--/.form-group-->
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary"><i class="fa fa-sign-in-alt"></i> Entrar</button>
-		<a href="#" class="btn btn-default pull-right" disabled><i class="fa fa-user-shield"></i> Recuperar Contraseña</a>
+		<a href="#" class="btn btn-default pull-right" disabled><i class="fa fa-key"></i> Recuperar Contraseña</a>
 	</div><!--/.form-group-->
 	<hr>
 	<div class="form-group">
@@ -35,7 +35,7 @@
 			<i class="fab fa-twitter-square " disabled></i> Entrar con Twitter
 		</a>
 		<a href="{{ route('admin.auth.register') }}" class="btn btn-success">
-			<i class="fa fa-home"></i>
+			<i class="fa fa-user-check"></i>
 			 Registrarse
 		</a>
 	</div><!--/.form-group-->	

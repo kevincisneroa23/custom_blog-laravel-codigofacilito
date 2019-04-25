@@ -79,10 +79,9 @@
 	</tbody>
 	</table>
 </div><!--/.col-->
-
 </div><!--/.row-->
 </div><!--/.container-->
-
+<center>{!! $articles->render() !!}</center>
 <!-- =====VENTANA MODAL ===== -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
